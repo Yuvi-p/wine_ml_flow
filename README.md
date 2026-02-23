@@ -63,6 +63,4 @@ Ensure MLflow is installed (pip install mlflow).
 
 Run mlflow ui in the project directory.
 
-Open http://localhost:5000 in your browser to compare the different training runs and metrics.
-
 Project developed as part of Assignment 2 in Machine Learning Course.
