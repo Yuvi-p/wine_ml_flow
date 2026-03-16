@@ -1,66 +1,47 @@
-# wine_ml_flow
-Wine Classification &amp; Experiment Tracking with MLflow | An end-to-end machine learning pipeline for wine recognition, featuring systematic experiment tracking, hyperparameter logging, and model versioning using MLflow.
+# Wine Classification & Experiment Tracking with MLflow
 
-Project Overview
-The objective of this project was to develop a robust classification model to identify the origin of wines based on their chemical signatures. Beyond the model itself, the primary focus was on implementing MLflow to manage the machine learning lifecycle, ensuring every experiment is reproducible, trackable, and comparable.
+An end-to-end machine learning pipeline for wine cultivar recognition, featuring systematic experiment tracking, hyperparameter logging, and model versioning.
 
+---
 
-Dataset Description
-The project utilizes the Wine Recognition Dataset, which consists of chemical analyses of wines grown in the same region in Italy but derived from three different cultivars.
+## 📋 Project Overview
+The objective of this project was to develop a robust classification model to identify the origin of wines based on their chemical signatures. Beyond model accuracy, the primary focus was on implementing **MLflow** to manage the machine learning lifecycle, ensuring every experiment is **reproducible, trackable, and comparable**.
 
-Samples: 178 samples across 3 classes.
+## 🧬 Dataset Description
+The project utilizes the **Wine Recognition Dataset**, consisting of chemical analyses of wines grown in the same region in Italy, derived from three different cultivars.
 
-Features: 13 constituent measurements, including:
+* **Samples:** 178 samples across 3 classes.
+* **Key Features (13 total):** * **Acidity:** Malic acid, Ash, Alkalinity of ash.
+    * **Phenols:** Total phenols, Flavanoids, Nonflavanoid phenols.
+    * **Visual/Chemical:** Color intensity, Hue, Proline, Alcohol, Magnesium.
 
-Alcohol, Malic acid, and Ash.
+## ⚙️ Machine Learning Pipeline
 
-Alkalinity of ash, Magnesium, and Total phenols.
+### 1. Data Preprocessing
+* **Standardization:** Scaling chemical measurements to handle varying magnitudes across features.
+* **Validation:** Splitting data into training and testing sets to ensure robust performance metrics.
 
-Flavanoids, Nonflavanoid phenols, and Proanthocyanins.
+### 2. Experiment Tracking (MLflow)
+The core of this project is the integration of **MLflow**, enabling:
+* **Parameter Logging:** Systematic tracking of hyperparameters such as `n_estimators`, `max_depth`, and `learning_rate`.
+* **Metric Logging:** Real-time recording of **Accuracy, F1-Score, and Precision** for every iteration.
+* **Artifact Storage:** Automatic saving of generated plots (Confusion Matrices, Feature Importance) and serialized model files directly within the MLflow UI.
 
-Color intensity, Hue, and Proline.
+## 📊 Model Performance
+* **Algorithm:** Random Forest Classifier.
+* **Key Insight:** Through experiment tracking and feature importance analysis, **"Proline"** and **"Flavanoids"** were identified as the most significant indicators of wine cultivar.
 
-Machine Learning Pipeline
-1. Data Preprocessing
+## 🛠️ Tech Stack
+* **Language:** Python
+* **Machine Learning:** scikit-learn
+* **Lifecycle Management:** MLflow
+* **Data Science Tools:** pandas, numpy, matplotlib, seaborn
 
-Standardizing features to handle varying scales across chemical measurements.
+---
 
-Splitting the data into training and testing sets to validate model performance.
+## 🚀 How to View Results
+To explore the experiment dashboard and compare different model runs:
 
-
-2. Experiment Tracking (MLflow)
-
-The core of this project is the integration of MLflow Flow, which allows for:
-
-Parameter Logging: Tracking hyperparameters such as n_estimators, max_depth, and learning_rate.
-
-Metric Logging: Recording Accuracy, F1-Score, and Precision for every run to compare model iterations.
-
-Artifact Storage: Saving generated plots (Confusion Matrices, Feature Importance) and the trained model files directly within the MLflow UI.
-
-
-3. Model Performance
-
-Model Used: Random Forest Classifier.
-
-Key Results: The model achieved high classification accuracy, with the experiment tracking revealing that "Proline" and "Flavanoids" were the most significant indicators of wine cultivar.
-
-🛠️ Tech Stack
-Language: Python
-
-Machine Learning: scikit-learn
-
-Lifecycle Management: MLflow
-
-Data Manipulation: pandas, numpy
-
-Visualization: matplotlib, seaborn
-
-How to View Results
-To view the experiment dashboard:
-
-Ensure MLflow is installed (pip install mlflow).
-
-Run mlflow ui in the project directory.
-
-Project developed as part of Assignment 2 in Machine Learning Course.
+1. **Install MLflow:**
+   ```bash
+   pip install mlflow
